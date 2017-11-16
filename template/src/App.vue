@@ -10,6 +10,9 @@
 </template>
 
 <script>
+
+import './css/base.scss';
+
 {{#unless router}}
 import HelloWorld from './components/HelloWorld'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
