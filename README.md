@@ -1,4 +1,4 @@
-#### 自定义自己的vue-cli模板
+### 自定义自己的vue-cli模板
 
 在使用vue-cli的过程中，常用的webpack模板只为我们提供最基础的内容，但每次需要新建一个项目的时候就需要把之前项目的一些配置都搬过来，这样就造成挺大的不方便，如果是作为一个团队，那么维护一个通用的模板，我认为是挺有必要的。   
 例如下面是我常用构建项目的目录。
@@ -51,7 +51,7 @@ meta.js 主要是定义模板的一些配置, 目前可定义的字段如下:
 - complete<Function>: 模板渲染完成后的回调函数, 优先于 completeMessage
 - helpers<Object>: 自定义的 Handlebars 辅助函数
 
-##### prompts
+#### prompts
 有用过vue-cli的同学应该有看过下面的这个图
 
 ![image](http://www.jamielhf.cn/wp/wp-content/uploads/2017/11/1510631675.png)
@@ -107,7 +107,7 @@ import router from './router'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 安装过程中，就会询问是否安装vuex了
 
 
-##### helper
+#### helper
 
 上面的``if_eq``，还有源码中的``unless_eq``是原本vue cli中注册的那个辅助函数，在vue-cli中的generate.js：
 
@@ -145,7 +145,7 @@ Handlebars.registerHelper('unless_eq', function (a, b, opts) {
 
 
 
-##### filters
+#### filters
 filters 是根据条件过滤文件，源码:
 ```
  "filters": {
