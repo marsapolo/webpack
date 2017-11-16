@@ -29,11 +29,7 @@ html,body{
   overflow-x: hidden !important;
   overflow-y: scroll ;
 }
-#app{
-  overflow-y: scroll;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling : touch;
-}
+
 #app >div{
   position: relative;
   width: 100%;

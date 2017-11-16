@@ -19,12 +19,12 @@ src
 下面说下怎么自定义自己的vue-cli模板
 
 #### fork一个自己的模板
-从  https://github.com/vuejs-templates/webpack fork 一个库，再提交自己的修改到【自己的分支】，因为我们大部分内容还是在这个基础上做修改的。  
+从  [https://github.com/vuejs-templates/webpack](https://github.com/vuejs-templates/webpack) fork 一个库，再提交自己的修改到【自己的分支】，因为我们大部分内容还是在这个基础上做修改的。  
 
 关于vue-cli的源码分析可以参考下这个文章[从vue-cli源码学习如何写模板](https://github.com/dwqs/blog/issues/56 )  
 
 
-vuejs-templates/webpack目录如下，
+``vuejs-templates/webpack``目录如下，
 
 ```
 │  .gitignore
@@ -43,7 +43,7 @@ D:\work\nodetest\webpack>
 ```
 #### meta.js
 
-meta.js 主要是定义模板的一些配置, 目前可定义的字段如下:
+``meta.js ``主要是定义模板的一些配置, 目前可定义的字段如下:
 
 - prompts<Object>: 收集用户自定义数据
 - filters<Object>: 根据条件过滤文件
@@ -52,11 +52,11 @@ meta.js 主要是定义模板的一些配置, 目前可定义的字段如下:
 - helpers<Object>: 自定义的 Handlebars 辅助函数
 
 #### prompts
-有用过vue-cli的同学应该有看过下面的这个图
+有用过``vue-cli``的同学应该有看过下面的这个图
 
 ![image](http://www.jamielhf.cn/wp/wp-content/uploads/2017/11/1510631675.png)
 
-看下 prompts的代码
+看下 ``prompts``的代码
 ```
  "prompts": {
     "name": {  //项目名
@@ -82,7 +82,7 @@ meta.js 主要是定义模板的一些配置, 目前可定义的字段如下:
  }
 
 ```
-所有的用户输入完成之后, template 目录下的所有文件将会用 Handlebars（[了解相关的语法点这里](http://handlebarsjs.com/)） 进行渲染. 用户输入的数据会作为模板渲染时的使用数据,例如，在cmd确认使用router后，那么main.js就会import router，main.js中源码：
+所有的用户输入完成之后, ``template`` 目录下的所有文件将会用 ``Handlebars``（[了解相关的语法点这里](http://handlebarsjs.com/)） 进行渲染. 用户输入的数据会作为模板渲染时的使用数据,例如，在``cmd``确认使用``router``后，那么``main.js``就会``import router，main.js``中源码：
 ```
 {{#router}}
 import router from './router'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
@@ -95,7 +95,7 @@ import router from './router'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 ```
 
 
-因为开发常用到vuex，我们可以加入vuex，修改meta.js
+因为开发常用到``vuex``，我们可以加入``vuex``，修改``meta.js``
 
 ```
  "vuex":{
@@ -104,7 +104,7 @@ import router from './router'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
     },
 ```
 
-安装过程中，就会询问是否安装vuex了
+安装过程中，就会询问是否安装``vuex``了
 
 
 #### helper
@@ -129,7 +129,7 @@ Handlebars.registerHelper('unless_eq', function (a, b, opts) {
     : opts.fn(this)
 })
 ```
-类似的，你也可以自定义一些函数，方便你自己去处理一些数据，在meta.js中helpers对象中可以加入自己的方法，如源码中就有注册一个``if_or``的方法,你在文件中就可以用``{{#if_or a b}}{{/if_or}}``去使用
+类似的，你也可以自定义一些函数，方便你自己去处理一些数据，在``meta.js``中``helpers``对象中可以加入自己的方法，如源码中就有注册一个``if_or``的方法,你在文件中就可以用``{{#if_or a b}}{{/if_or}}``去使用
 
 ```
 "helpers": {
@@ -146,7 +146,7 @@ Handlebars.registerHelper('unless_eq', function (a, b, opts) {
 
 
 #### filters
-filters 是根据条件过滤文件，源码:
+``filters`` 是根据条件过滤文件，源码:
 ```
  "filters": {
     ".eslintrc.js": "lint",
@@ -159,7 +159,7 @@ filters 是根据条件过滤文件，源码:
   },
 
 ```
-同样，这里我可以加入自己的vuex目录，当，vuex为true的时候，会导入这个目录
+同样，这里我可以加入自己的vuex目录，当，``vuex``为``true``的时候，会导入这个目录
 ```
 
  "filters": {
@@ -173,7 +173,7 @@ filters 是根据条件过滤文件，源码:
     "src/router/**/*": "router"
   },
 ```
-然后在main.js引入vuex   
+然后在``main.js``引入``vuex   ``
 
 
 ```
@@ -214,10 +214,20 @@ new Vue({
 
   },
 ```
-后续的话只需要将自己需要的文件跟文件夹，加入到``template/src``，再提交到自己的分支，下次安装自己的模板的时候就可以直接安装vuex了。
+后续的话只需要将自己需要的文件跟文件夹，加入到``template/src``，例如,我这里加入一个询问是否是移动端的，是移动端的话，会引入 ``lib-flexible.js ``以及相关配置的scss文件
 
 ```
-vue init jamielhf/webpack#
+  "isMobile":{
+        "type": "confirm",
+        "message": "is Mobile project?"
+    },
+```
+
+
+
+
+```
+vue init jamielhf/webpack#template1 name
 
 ```
 
