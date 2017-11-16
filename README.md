@@ -223,14 +223,15 @@ new Vue({
     },
 ```
 
-
+最后,提交到github自己的分支上，就可以使用了
 
 
 ```
 vue init jamielhf/webpack#template1 name
 
 ```
-
+#### github地址
+[https://github.com/jamielhf/webpack/tree/template1](https://github.com/jamielhf/webpack/tree/template1)
 
 #### 参考：  
 [vue-cli webpack的配置详解](http://blog.csdn.net/hongchh/article/details/55113751 )  
