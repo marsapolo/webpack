@@ -99,7 +99,7 @@ module.exports = {
     "src/store/**/*": "vuex",
     "src/router/**/*": "router",
     "src/css/min.scss": "isMobile",
-    "static/js/lib-flexible": "isMobile",
+    "static/js/lib-flexible.js": "isMobile",
   },
   "completeMessage": "To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install\n  npm run dev\n\nDocumentation can be found at https://vuejs-templates.github.io/webpack"
 };
