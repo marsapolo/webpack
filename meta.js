@@ -157,20 +157,16 @@ module.exports = {
       ],
     },
   },
-  // filters: {
-  //   '.eslintrc.js': 'lint',
-  //   '.eslintignore': 'lint',
-  //   'config/test.env.js': 'unit || e2e',
-  //   'build/webpack.test.conf.js': "unit && runner === 'karma'",
-  //   'test/unit/**/*': 'unit',
-  //   'test/unit/index.js': "unit && runner === 'karma'",
-  //   'test/unit/jest.conf.js': "unit && runner === 'jest'",
-  //   'test/unit/karma.conf.js': "unit && runner === 'karma'",
-  //   'test/unit/specs/index.js': "unit && runner === 'karma'",
-  //   'test/unit/setup.js': "unit && runner === 'jest'",
-  //   'test/e2e/**/*': 'e2e',
-  //   'src/router/**/*': 'router',
-  // },
+  filters: {
+    ".eslintrc.js": "lint",
+    ".eslintignore": "lint",
+    "config/test.env.js": "unit || e2e",
+    "test/unit/**/*": "unit",
+    "build/webpack.test.conf.js": "unit",
+    "test/e2e/**/*": "e2e",
+    "src/store/**/*": "vuex",
+    "src/router/**/*": "router",
+  },
   complete: function(data, { chalk }) {
     const green = chalk.green
 
