@@ -164,7 +164,6 @@ module.exports = {
     "test/unit/**/*": "unit",
     "build/webpack.test.conf.js": "unit",
     "test/e2e/**/*": "e2e",
-    "src/store/**/*": "vuex",
     "src/router/**/*": "router",
   },
   complete: function(data, { chalk }) {
