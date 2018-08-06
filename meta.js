@@ -165,6 +165,5 @@ module.exports = {
     "build/webpack.test.conf.js": "unit",
     "test/e2e/**/*": "e2e",
     "src/router/**/*": "router",
-    "src/components/**/*": "components",
   }
 };
