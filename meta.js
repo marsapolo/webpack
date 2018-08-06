@@ -1,9 +1,5 @@
 
 module.exports = {
-  metalsmith: {
-    // When running tests for the template, this adds answers for the selected scenario
-    before: addTestAnswers
-  },
   helpers: {
     if_or(v1, v2, options) {
 
